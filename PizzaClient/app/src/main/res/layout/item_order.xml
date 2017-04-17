@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:contentPadding="15dp"
+        card_view:cardElevation="5dp"
+        card_view:cardBackgroundColor="#FFFBBC">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/txtTextId"
+                android:text="Заказ №"
+                android:textSize="20dp"
+                android:textColor="#3F51B5"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtOrderId"
+                android:layout_toRightOf="@+id/txtTextId"
+                android:layout_toLeftOf="@+id/txtOrderPrice"
+                android:layout_centerVertical="true"
+                android:text="1234"
+                android:textSize="20dp"
+                android:textColor="#3F51B5"/>
+
+            <TextView
+                android:id="@+id/txtOrderPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textSize="30dp"
+                android:text="300"
+                android:textColor="#FF0000"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

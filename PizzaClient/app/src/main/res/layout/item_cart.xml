@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:contentPadding="15dp"
+        card_view:cardElevation="5dp"
+        card_view:cardBackgroundColor="#FFFBBC">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/top">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/btnRemove"
+                    android:background="@android:drawable/ic_delete"
+                    style="@style/Widget.AppCompat.Button.Small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtCartPizzaName"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/btnRemove"
+                    android:layout_alignParentRight="true"
+                    android:text="пицца"
+                    android:textAlignment="center"
+                    android:textColor="#3F51B5"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_centerHorizontal="true"/>
+
+
+            </RelativeLayout>
+
+            <pl.polak.clicknumberpicker.ClickNumberPickerView
+                android:id="@+id/count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top"
+                android:paddingLeft="50dp"
+                app:value="1"
+                app:min_value="1"
+                app:max_value="99"
+                app:decimal_number="0"
+                app:picker_corner_radius="10"
+                app:pickers_background_color="#3F51B5"
+                app:swipe_enabled="false"
+                app:value_background_color="#5C6BC0"
+                app:value_text_color="@android:color/white"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
