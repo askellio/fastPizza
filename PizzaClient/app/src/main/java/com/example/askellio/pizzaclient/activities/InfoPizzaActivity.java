@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.askellio.pizzaclient.ApiHolder;
 import com.example.askellio.pizzaclient.R;
+import com.example.askellio.pizzaclient.interfaces.setProductsForPizzaCallBack;
 import com.example.askellio.pizzaclient.structs.StructPizzaForGet;
 import com.example.askellio.pizzaclient.structs.StructProductsComplex;
 
@@ -48,26 +49,25 @@ public class InfoPizzaActivity extends AppCompatActivity {
         }
 
 
-        txtName.setText("Название: "+pizza.getName());
-        txtPrice.setText("Цена: "+pizza.getPrice()+" руб");
-        txtWeight.setText("Вес: "+pizza.getWeight()+" г");
-        //txtProducts.setText("Продукты: "+pizza.getProducts().toString());
-        txtType.setText("Тип: "+pizza.getType());
+        txtName.setText(pizza.getName());
+        txtPrice.setText(pizza.getPrice()+" руб");
+        txtWeight.setText(pizza.getWeight()+" г");
+        txtType.setText(pizza.getType());
 
-        //
         ApiHolder holder = ApiHolder.getInstance();
-        holder.getProductsForPizza(pizza.getId(), this);
-    }
-
-    public void setProducts (List<StructProductsComplex> products) {
-        StringBuffer buf = new StringBuffer();
-        buf.append("Продукты: ");
-        for(int i=0; i<products.size(); i++) {
-            if (i==0)
-                buf.append(products.get(i).getName());
-            else
-                buf.append(", "+products.get(i).getName());
-        }
-        txtProducts.setText(buf.toString());
+        holder.getProductsForPizza(pizza.getId(), new setProductsForPizzaCallBack() {
+            @Override
+            public void setProductsForPizza(List<StructProductsComplex> products) {
+                StringBuffer buf = new StringBuffer();
+                buf.append("Продукты: ");
+                for(int i=0; i<products.size(); i++) {
+                    if (i==0)
+                        buf.append(products.get(i).getName());
+                    else
+                        buf.append(", "+products.get(i).getName());
+                }
+                txtProducts.setText(buf.toString());
+            }
+        }, this.getApplicationContext());
     }
 }

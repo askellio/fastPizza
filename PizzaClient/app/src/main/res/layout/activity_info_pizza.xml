@@ -14,36 +14,117 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imagePizza"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtTextInfoName"
+        android:layout_alignParentLeft="true"
+        android:text="Название: "
+        android:textSize="20dp"
+        android:layout_below="@+id/imagePizza"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/txtTextInfoName"
+        android:textAlignment="textEnd"
         android:id="@+id/txtInfoName"
-        android:layout_below="@+id/imagePizza"/>
+        android:text="Мексиканка"
+        android:layout_below="@+id/imagePizza"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtTextInfoType"
+        android:layout_alignParentLeft="true"
+        android:text="Тип: "
+        android:textSize="20dp"
+
+        android:layout_below="@+id/txtTextInfoName"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/txtTextInfoType"
+        android:textAlignment="textEnd"
         android:id="@+id/txtInfoType"
-        android:layout_below="@+id/txtInfoName"/>
+        android:layout_below="@+id/txtInfoName"
+        android:text="italic"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtTextInfoWeight"
+        android:layout_alignParentLeft="true"
+        android:text="Вес: "
+        android:textSize="20dp"
+        android:layout_below="@+id/txtTextInfoType"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/txtTextInfoWeight"
+        android:textAlignment="textEnd"
         android:id="@+id/txtInfoWeight"
-        android:layout_below="@+id/txtInfoType"/>
+        android:text="500"
+        android:layout_below="@+id/txtInfoType"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtTextInfoProducts"
+        android:layout_alignParentLeft="true"
+        android:text="Продукты: "
+        android:textSize="20dp"
+        android:layout_below="@+id/txtTextInfoWeight"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textAlignment="textEnd"
+        android:layout_toRightOf="@+id/txtTextInfoProducts"
         android:id="@+id/txtInfoProducts"
-        android:layout_below="@+id/txtInfoWeight"/>
+        android:layout_below="@+id/txtInfoWeight"
+        android:text="Колбаса, сыр, овощи"
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/txtTextInfoPrice"
+        android:layout_alignParentLeft="true"
+        android:text="Стоимость: "
+        android:textSize="20dp"
+        android:layout_below="@+id/txtInfoProducts"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtTextInfoPrice"
+        android:textAlignment="textEnd"
+        android:layout_alignParentRight="true"
+        android:text="300"
         android:id="@+id/txtInfoPrice"
+        android:textSize="20dp"
         android:layout_below="@+id/txtInfoProducts"/>
 
 </RelativeLayout>

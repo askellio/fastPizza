@@ -16,19 +16,11 @@
         android:id="@+id/editAddress"
         android:hint="Адресс доставки"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnAddress"
-        android:layout_below="@+id/editAddress"
-        android:text="ВЫбрать адресс доставки"
-        android:onClick="findAddress"/>
-
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/cartRV"
-        android:layout_below="@+id/btnAddress"
+        android:layout_below="@+id/editAddress"
         android:layout_above="@+id/btnDoOrder"/>
 
     <Button

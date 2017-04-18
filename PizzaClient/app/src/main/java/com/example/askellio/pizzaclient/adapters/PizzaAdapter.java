@@ -85,7 +85,7 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.PizzaHolder>
                 Cart cart = Cart.getInstance();
                 StructPizzaForGet pizza = pizzas.get(position);
                 cart.addPizza(pizza.getId(), pizza.getName());
-                Toast.makeText(_context, "Добавлено в корзину", Toast.LENGTH_SHORT);
+                Toast.makeText(_context, "Добавлено в корзину", Toast.LENGTH_SHORT).show();
             }
         });
     }

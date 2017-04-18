@@ -7,9 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.example.askellio.pizzaclient.ApiHolder;
 import com.example.askellio.pizzaclient.R;
 import com.example.askellio.pizzaclient.adapters.OrderAdapter;
 import com.example.askellio.pizzaclient.adapters.PizzaFromOrderAdapter;
+import com.example.askellio.pizzaclient.interfaces.setPizzasForOrderCallBack;
 import com.example.askellio.pizzaclient.structs.StructOrder;
 import com.example.askellio.pizzaclient.structs.StructPizzaFromOrder;
 
@@ -55,11 +57,15 @@ public class InfoOrderActivity extends AppCompatActivity {
             txtAddress.setText(order.getAddress());
             txtDate.setText(order.getDate().toString());
             txtSummary.setText(Double.toString(order.getSummary()));
-        }
-    }
 
-    public void setData (List<StructPizzaFromOrder> pizzas) {
-        adapter.setData(pizzas);
-        adapter.notifyDataSetChanged();
+            ApiHolder holder = ApiHolder.getInstance();
+            holder.getPizzasByOrderId(order.getId(), new setPizzasForOrderCallBack() {
+                @Override
+                public void setPizzasForOrder(List<StructPizzaFromOrder> pizzas) {
+                    adapter.setData(pizzas);
+                    adapter.notifyDataSetChanged();
+                }
+            }, this.getApplicationContext());
+        }
     }
 }

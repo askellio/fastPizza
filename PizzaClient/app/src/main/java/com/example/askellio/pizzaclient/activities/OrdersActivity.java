@@ -11,6 +11,7 @@ import com.example.askellio.pizzaclient.ApiHolder;
 import com.example.askellio.pizzaclient.R;
 import com.example.askellio.pizzaclient.adapters.OrderAdapter;
 import com.example.askellio.pizzaclient.adapters.PizzaAdapter;
+import com.example.askellio.pizzaclient.interfaces.setOrdersCallBack;
 import com.example.askellio.pizzaclient.structs.StructOrder;
 import com.example.askellio.pizzaclient.structs.StructPizzaForGet;
 
@@ -40,12 +41,13 @@ public class OrdersActivity extends AppCompatActivity {
         int id = sPref.getInt("id", 0);
 
         ApiHolder holder = ApiHolder.getInstance();
-        holder.getOrdersById (id, this);
+        holder.getOrdersById(id, new setOrdersCallBack() {
+            @Override
+            public void setOrders(List<StructOrder> orders) {
+                adapter.setData(orders);
+                adapter.notifyDataSetChanged();
+            }
+        }, this.getApplicationContext());
 
-    }
-
-    public void setData (List<StructOrder> orders) {
-        adapter.setData(orders);
-        adapter.notifyDataSetChanged();
     }
 }

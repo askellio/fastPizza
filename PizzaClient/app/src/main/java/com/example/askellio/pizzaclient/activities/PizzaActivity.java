@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.example.askellio.pizzaclient.ApiHolder;
 import com.example.askellio.pizzaclient.adapters.PizzaAdapter;
 import com.example.askellio.pizzaclient.R;
+import com.example.askellio.pizzaclient.interfaces.setPizzasCallBack;
 import com.example.askellio.pizzaclient.structs.StructPizzaForGet;
 
 import java.util.List;
@@ -38,12 +39,13 @@ public class PizzaActivity extends AppCompatActivity {
         if (intent != null) {
             category = intent.getStringExtra("category");
             ApiHolder holder = ApiHolder.getInstance();
-            holder.getPizzasCategory(category, this);
+            holder.getPizzasCategory(category, new setPizzasCallBack() {
+                @Override
+                public void setPizzas(List<StructPizzaForGet> pizzas) {
+                    adapter.setData(pizzas);
+                    adapter.notifyDataSetChanged();
+                }
+            }, this.getApplicationContext());
         }
-    }
-
-    public void setData (List<StructPizzaForGet> pizzas) {
-        adapter.setData(pizzas);
-        adapter.notifyDataSetChanged();
     }
 }
